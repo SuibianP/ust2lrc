@@ -9,7 +9,11 @@ Throretically, it could be utilised as an UTAU plugin as well, whose plugin.txt 
 This program runs in a shell environment. In Windows it could be executed in command prompt or ust file drag-and-drop.
 
 Usage syntax: `ust2lrc <ust file> [[-a|-b] [<delimiters> [<threshold>]]]`<br />
-Examples: `ust2lrc source.ust -a R,r 240` `ust2lrc this.ust -a "a R,i R,u R,e R,o R"` `ust2lrc input.ust` `ust2lrc whatever.ust -b`
+Examples
+- `ust2lrc source.ust -a R,r 240`<br />
+- `ust2lrc this.ust -a "a R,i R,u R,e R,o R"`<br />
+- `ust2lrc input.ust`<br />
+- `ust2lrc whatever.ust -b`
 
 `-a` refers to enhanced lyric output, where the delimiters of each lyric line (and their length threshold) specified in the succeeding arguments.<br />
 `-b` refers to simple lyric output, with each note treated as a separate lyric line.

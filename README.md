@@ -2,7 +2,7 @@
 ## Introduction
 A tool to generate [simple](https://en.wikipedia.org/wiki/LRC_(file_format)#Simple_format)/[enhanced](https://en.wikipedia.org/wiki/LRC_(file_format)#Enhanced_format) lyric file from existing UTAU project.
 
-This program is programmed with compability in mind, i.e., using only platform-independent C standard functions. However, kindly notice that [strdup\(\)](https://en.cppreference.com/w/c/experimental/dynamic/strdup) is only merged into mainline ISO C standard since C2x.
+This application is programmed with compability in mind, i.e., using only platform-independent C standard libraries. However, kindly notice that [strdup\(\)](https://en.cppreference.com/w/c/experimental/dynamic/strdup) is only merged into mainline ISO C standard since C2x.
 
 Throretically, it could be utilised as an UTAU plugin as well, whose plugin.txt will be released later. FYI, as a plugin, statement of "[notes=all](https://w.atwiki.jp/utaou/pages/64.html#id_0439d63b)" in plugin.txt or selecting all before execution is compulsory, or the lyric of \[\#NEXT\] will overwrite the lyric of its preceding note.
 ## Functionality

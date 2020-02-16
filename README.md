@@ -15,7 +15,7 @@ Examples
 - `ust2lrc "C:\Program Files\input.ust"`<br />
 - `ust2lrc D:\whatever.ust -b`
 
-`-a` refers to enhanced lyric output, where the delimiters of each lyric line (and their length threshold) specified in the succeeding arguments.<br />
+`-a` refers to enhanced lyric output, where the delimiters of each lyric line (possibly with their length threshold) is specified in the succeeding arguments.<br />
 `-b` refers to simple lyric output, with each note treated as a separate lyric line.
 
 You may want to use quotes or escape characters to pass an argument containing white character\(s\).

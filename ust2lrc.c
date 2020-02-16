@@ -11,7 +11,7 @@
 #define UST2LRC_SYNTAX "Usage syntax: ust2lrc <ust file> [[-e|-s] [<delimiters> [<threshold>]]]\nExample: ust2lrc source.ust -e R,r 240\nYou may want to use quotes or escape characters to pass an argument containing white character(s)."
 
 //Usage syntax: ust2lrc <ust file> [[-e|-s] [<delimiters> [<threshold>]]]
-//Example: ust2lrc source.ust R,r 240
+//Example: ust2lrc source.ust -e R,r 240
 //You may want to use quotes or escape characters to pass an argument containing space.
 //TODO: encoding convert, input validation
 

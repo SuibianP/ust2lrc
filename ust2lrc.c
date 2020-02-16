@@ -8,9 +8,9 @@
 #define MAX_UST_LYRIC 512
 #define MAX_UST_PROJECTNAME 512
 #define MAX_LRC_LYRIC 512
-#define UST2LRC_SYNTAX "Usage syntax: ust2lrc <ust file> [[-a|-b] [<delimiters> [<threshold>]]]\nExample: ust2lrc source.ust -a R,r 240\nYou may want to use quotes or escape characters to pass an argument containing space."
+#define UST2LRC_SYNTAX "Usage syntax: ust2lrc <ust file> [[-e|-s] [<delimiters> [<threshold>]]]\nExample: ust2lrc source.ust -e R,r 240\nYou may want to use quotes or escape characters to pass an argument containing white character(s)."
 
-//Usage syntax: ust2lrc <ust file> [[-a|-b] [<delimiters> [<threshold>]]]
+//Usage syntax: ust2lrc <ust file> [[-e|-s] [<delimiters> [<threshold>]]]
 //Example: ust2lrc source.ust R,r 240
 //You may want to use quotes or escape characters to pass an argument containing space.
 //TODO: encoding convert, input validation
@@ -39,31 +39,31 @@ bool isDelimiter(char Delimiter[], char Source[])
 
 int main(int argc, char *argv[])
 {
-    bool isBasic;
+    bool isSimple;
     char Delimiter[MAX_UST_LYRIC];
     int DelimiterLengthThreshold = 0;
     if (argc < 2 || argc > 5)
     {
-        printf(UST2LRC_SYNTAX);
+        puts(UST2LRC_SYNTAX);
         exit(0);
     }
     else if (argc == 2) //interactive mode
     {
-        fputs("Basic lrc/Advanced lrc? (B/A) ", stdout);
+        fputs("Simple lrc/Enhanced lrc? (S/E) ", stdout); //not to print \n
         switch (getchar())
         {
         case 'B':
-            isBasic = true;
+            isSimple = true;
             break;
         case 'A':
-            isBasic = false;
+            isSimple = false;
             break;
         default:
             puts("Invalid input.");
-            printf(UST2LRC_SYNTAX);
+            puts(UST2LRC_SYNTAX);
             exit(0);
         }
-        if (!isBasic)
+        if (!isSimple)
         {
             fputs("Input all delimiters, separated by commas. ", stdout);
             scanf("%s", Delimiter);
@@ -73,16 +73,16 @@ int main(int argc, char *argv[])
     }
     else //argument mode
     {
-        //handle arg 3 [-a|-b]
-        if (strcmp(argv[2], "-b"))
-            isBasic = true;
-        else if (strcmp(argv[2], "-a"))
-            isBasic = false;
+        //handle arg 3 [-e|-s]
+        if (strcmp(argv[2], "-s"))
+            isSimple = true;
+        else if (strcmp(argv[2], "-e"))
+            isSimple = false;
         else
         {
             puts("Invalid input.");
-            printf(UST2LRC_SYNTAX);
-            return 0;
+            puts(UST2LRC_SYNTAX);
+            exit(0);
         }
         //handle arg 4 delimiter
         if (argc > 3)
@@ -96,9 +96,12 @@ int main(int argc, char *argv[])
 
     char tempustline[MAX_UST_LINE], ProjectName[MAX_UST_PROJECTNAME];
     int count = 0, i; //count for note count, i for loop
-    FILE *inust = fopen(argv[1], "r"), *outlrc = fopen("out.lrc", "w");
-    if (inust == NULL || outlrc == NULL)
+    FILE *inust = fopen(argv[1], "r");
+    if (inust == NULL)
+    {
         perror("\nFile access failure");
+        exit(0);
+    }
     struct ustline *ustinstance = malloc(sizeof(struct ustline));
     float CurrentTempo;
     double CumulativeTime = 0.0;
@@ -128,8 +131,14 @@ int main(int argc, char *argv[])
     fclose(inust);
     //input into array complete
 
+    FILE *outlrc = fopen("out.lrc", "w");
+    if (outlrc == NULL)
+    {
+        perror("\nFile access failure");
+        exit(0);
+    }
     //basic lrc output
-    if (isBasic)
+    if (isSimple)
     {
         fprintf(outlrc, "[ti=%s]\n[re=ust2lrc by Suibian]\n", ProjectName);
         for (i = 0; i < count; ++i)

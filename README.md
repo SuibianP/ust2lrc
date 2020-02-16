@@ -22,5 +22,6 @@ You may want to use quotes or escape characters to pass an argument containing w
 
 If the third argument is not specified, the program will interact with the user to acquire necessary arguments via command line.
 ## Acknowledgements
-**Rye-Catcher** for kind guidance regarding memory allocation<br />
-**Ray Lum** for the constructive idea of interactive operation
+**[Rye-Catcher](https://rye-catcher.github.io/)** for kind guidance regarding memory allocation<br />
+**[Ray Lum](https://space.bilibili.com/6349837/)** for the constructive idea of interactive operation<br />
+**[UTAU ユーザー互助会@ ウィキ](https://w.atwiki.jp/utaou/pages/64.html)** for general knowledge about UTAU plugin development

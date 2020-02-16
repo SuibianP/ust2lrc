@@ -14,6 +14,8 @@ Examples: `ust2lrc source.ust -a R,r 240` `ust2lrc this.ust -a "a R,i R,u R,e R,
 `-a` refers to enhanced lyric output, where the delimiters of each lyric line (and their length threshold) specified in the succeeding arguments.<br />
 `-b` refers to simple lyric output, with each note treated as a separate lyric line.
 
+You may want to use quotes or escape characters to pass an argument containing space.
+
 If the third argument is not specified, the program will interact with the user to acquire necessary arguments via command line.
 ## Acknowledgements
 **Rye-Catcher** for kind guidance regarding memory allocation<br />

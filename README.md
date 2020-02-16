@@ -12,8 +12,8 @@ Usage syntax: `ust2lrc <ust file> [[-a|-b] [<delimiters> [<threshold>]]]`<br />
 Examples
 - `ust2lrc source.ust -a R,r 240`<br />
 - `ust2lrc this.ust -a "a R,i R,u R,e R,o R"`<br />
-- `ust2lrc input.ust`<br />
-- `ust2lrc whatever.ust -b`
+- `ust2lrc "C:\Program Files\input.ust"`<br />
+- `ust2lrc D:\whatever.ust -b`
 
 `-a` refers to enhanced lyric output, where the delimiters of each lyric line (and their length threshold) specified in the succeeding arguments.<br />
 `-b` refers to simple lyric output, with each note treated as a separate lyric line.

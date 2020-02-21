@@ -22,7 +22,7 @@ You may want to use quotes or escape characters to pass an argument containing w
 
 If the third argument is not specified, the program will interact with the user to acquire necessary arguments via command line.
 ## Acknowledgements
-**[Gloomy Ghost（蚊香豹）](https://www.gloomyghost.com/)** for CMake compile script f8e87c6746fb751a540d135a80c93b53a17ebca5<br />
+**[Gloomy Ghost（蚊香豹）](https://www.gloomyghost.com/)** for [CMake compile script](f8e87c6746fb751a540d135a80c93b53a17ebca5)<br />
 **[Ray Lum（瑞洛凩）](https://space.bilibili.com/6349837/)** for the constructive idea of interactive operation<br />
 **[Rye-Catcher](https://rye-catcher.github.io/)** for kind guidance regarding memory allocation<br />
 **[shine_5402（数字君）](https://shine5402.top/)** for suggestions on programming efficiency<br />
